@@ -1,0 +1,84 @@
+@mixin input(
+  $font-color-1, $bg-color-1, $border-color-1,
+  $font-color-2, $bg-color-2, $border-color-2,
+  $padding, $border-radius
+) {
+  [type="search"],
+  [type="text"],
+  [type="password"],
+  [type="email"],
+  [type="number"],
+  [type="tel"],
+  [type="url"],
+  // [type="color"],
+  [type="date"],
+  [type="datetime"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"] {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0.25em 0.5em;
+    color: $font-color-1;
+    background-color: $bg-color-1;
+    border: 1px solid $border-color-1;
+    border-radius: $border-radius;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out, border-color 0.3s ease-out;
+    &:focus {
+      color: $font-color-2;
+      background-color: $bg-color-2;
+      border: 1px solid $border-color-2;
+    }
+    &::placeholder{
+      color: $font-color-1;
+    }
+  }
+}
+
+label{
+  &.custom-search{
+    position: relative;
+    [type="text"],
+    [type="search"] {
+      padding-right: 1.5em;
+      width: 100%;
+      transition: width 0.5s ease-out, background-color 0.3s ease-out;
+      + button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2.25em;
+        height: 100%;
+        background-color: transparent;
+        background-image: url(../images/ui/search.svg);
+        background-position: 12px center;
+        background-repeat: no-repeat;
+        background-size: 35%;
+        border: initial;
+        outline: initial;
+        appearance: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/*
+  自訂義 input 輸入框
+  $font-color-1, $bg-color-1, $border-color-1,
+  $font-color-2, $bg-color-2, $border-color-2,
+  $padding, $border-radius
+*/
+
+@include input(
+  $color-gray-3, $color-gray-1, $color-gray-1,
+  $document-default-color, white, $border-default-color,
+  0.1em, $border-default-radius
+);
+
+form{
+  input{
+      margin-bottom: 0.25em;
+  }
+}

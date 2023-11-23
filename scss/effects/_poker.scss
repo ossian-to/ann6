@@ -1,0 +1,67 @@
+ul.pokers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5em;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+  li.poker {
+    width: 260px;
+    label {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      width: 260px;
+      height: 260px;
+      perspective: 500px;
+      cursor: pointer;
+      input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        &:checked + .flip {
+          transform: rotateY(180deg);
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+      .flip {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 1s;
+
+        .front,
+        .back {
+          // display: flex;
+          // align-items: center;
+          // justify-content: center;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          // color: #3f2e6e;
+          // font-size: 26px;
+          border-radius: 1em;
+          backface-visibility: hidden;
+        }
+        .front {
+          // background-image: url(../images/cards/01.png);
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .back {
+          background-image: url(../images/cards/back.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
+}

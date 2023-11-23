@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import "initial";
+
+// 載入思源黑體，使用方式如下
+// font-family: 'Noto Sans TC', sans-serif;
+// font-weight: 900;
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap');
+
+// 載入思源宋體
+// font-family: 'Noto Serif TC', serif;
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+
+*{
+  box-sizing: border-box;
+  transition: font-size 0.3s, padding 0.3s, top 0.3s, right 0.3s, width 0.3s, max-width 0.3s, border-radius 0.3s;
+}
+
+
+
+// RWD 自適應設定
+
+// @import "rwd";

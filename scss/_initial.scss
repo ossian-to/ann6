@@ -1,0 +1,50 @@
+@import "base/normalize";
+@import "base/var";
+@import "base/width";
+@import "base/button";
+@import "base/clearfix";
+// @import "form/forms";
+// @import "table/table";
+// @import "panel/panel";
+@import "plugins/modal";
+
+// 自訂的調整 ==================================================
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+html,
+body {
+  padding: 0;
+  height: 100%;
+  color: $document-default-color;
+  font-family: $document-font-family;
+  font-size: $document-root-font-size;
+  background-color: $document-bg-color;
+  // safari 不支援
+  scroll-behavior: smooth;
+  word-wrap: break-word;
+}
+
+/* 清除圖片底部的空白 */
+img,
+svg {
+  vertical-align: middle;
+  border: none;
+  outline: none;
+}
+
+.ossian {
+  position: relative;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: $document-default-width;
+}

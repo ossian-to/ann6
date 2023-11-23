@@ -1,0 +1,154 @@
+.panel {
+  display: grid;
+  // grid-template-rows: minmax(1rem, 6rem) auto minmax(1rem, 6rem);
+  position: relative;
+  overflow: hidden;
+  border-radius: $border-default-radius;
+
+  > header,
+  > .header,
+  > main,
+  > .main,
+  > footer,
+  > .footer {
+    padding: $default-padding;
+  }
+
+  > header,
+  > .header {
+    display: flex;
+    align-items: center;
+    color: $document-default-color;
+    border-bottom: 1px dotted $color-gray-2;
+  }
+
+  > header > h3,
+  > .header > h3 {
+    margin: initial;
+  }
+
+  > main,
+  > .main {
+    color: $document-default-color;
+  }
+
+  > main.line .row,
+  > .main.line .row {
+    border-bottom: 1px dotted $color-gray-2;
+  }
+
+  > main.line .row:nth-last-child(1),
+  > .main.line .row:nth-last-child(1) {
+    border-bottom: initial;
+  }
+
+  > footer,
+  > .footer {
+    color: $document-default-color;
+    border-top: 1px dotted $color-gray-2;
+  }
+
+  > footer.button,
+  > .footer.button {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: initial;
+  }
+
+  > footer.button > a,
+  > .footer.button > a,
+  > footer.button > button,
+  > .footer.button > button,
+  > footer.button > input[type="submit"],
+  > .footer.button > input[type="submit"],
+  > footer.button > input[type="reset"],
+  > .footer.button > input[type="reset"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1rem;
+    text-decoration: none;
+    background: initial;
+    cursor: pointer;
+    border: initial;
+    border-right: 1px dotted $color-gray-3;
+    box-shadow: initial;
+    // 移除 iOS 的 input[type="submit"] 樣式
+    appearance: none;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  > footer.button > a:hover,
+  > .footer.button > a:hover,
+  > footer.button > button:hover,
+  > .footer.button > button:hover,
+  > footer.button > input[type="submit"]:hover,
+  > .footer.button > input[type="submit"]:hover,
+  > footer.button > input[type="reset"]:hover,
+  > .footer.button > input[type="reset"]:hover {
+    box-shadow: 0 2em 2em rgba(0, 0, 0, 0.01) inset,
+      0 0.15em 0.15em rgba(0, 0, 0, 0.1) inset;
+  }
+
+  > footer.button > a:nth-last-child(1),
+  > .footer.button > a:nth-last-child(1),
+  > footer.button > button:nth-last-child(1),
+  > .footer.button > button:nth-last-child(1),
+  > footer.button > input:nth-last-child(1),
+  > .footer.button > input:nth-last-child(1) {
+    border-right: initial;
+  }
+
+  > figure {
+    overflow: hidden;
+    position: relative;
+  }
+
+  > figure > img {
+    width: 100%;
+  }
+
+  > figure > figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .row {
+    padding: 0.5em 0;
+  }
+
+  .row:nth-child(1) {
+    padding-top: initial;
+  }
+
+  .row:nth-last-child(1) {
+    padding-bottom: initial;
+  }
+
+  .close {
+    cursor: pointer;
+  }
+
+  .close::before,
+  .close::after {
+    content: "";
+    position: absolute;
+    top: 2em;
+    right: $default-padding;
+    width: 1em;
+    height: 1px;
+    background-color: $color-gray-2;
+  }
+
+  .close::before {
+    transform: rotate(45deg);
+  }
+
+  .close::after {
+    transform: rotate(-45deg);
+  }
+}

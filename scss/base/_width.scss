@@ -1,0 +1,7 @@
+
+@for $var from 1 through 10 {
+  .w-#{$var},
+  .w#{$var} {
+    width: $var * 10%;
+  }
+}

@@ -1,0 +1,75 @@
+
+@mixin custom-switch($dot-color-1, $bg-color-1, $dot-color-2, $bg-color-2) {
+  .custom-switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    [type="checkbox"],
+    [type="radio"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      visibility: hidden;
+      &:checked {
+        + .custom-style {
+            background-color:$bg-color-2;
+            // border: $border-width-2 solid $border-color-2;
+          &:before {
+            left: 1em;
+            background-color: $dot-color-2;
+          }
+        }
+      }
+    }
+
+    .custom-style {
+      display: inline-block;
+      position: relative;
+      width: 2em;
+      height: 1em;
+      background-color: $bg-color-1;
+      // border: $border-width-1 solid $border-color-1;
+      border-radius: 1em;
+      transition: background-color 0.3s ease-out, border 0.3s ease-out;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1em;
+        height: 1em;
+        background-color: $dot-color-1;
+        border-radius: 50%;
+        transition: left 0.3s ease-out, background-color 0.3s ease-out;
+      }
+      // &.square {
+      //   border-radius: 5px;
+      //   &:before {
+      //     border-radius: calc(5px * 0.85);
+      //   }
+      // }
+      &.line {
+        height: 0.4em;
+        &:before {
+          top: -0.3em;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+/*
+  自訂義 switch 開關
+  $dot-color-1, $bg-color-1, $border-color-1, $border-width-1,
+  $dot-color-2, $bg-color-2, $border-color-2, $border-width-2
+*/
+
+@include custom-switch(
+  $color-gray-9, $color-gray-1,
+  $color-green-3, $color-gray-2
+);

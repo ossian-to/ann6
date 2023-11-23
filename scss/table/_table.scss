@@ -1,0 +1,133 @@
+@mixin horizontal() {
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+}
+
+@mixin th-td($border, $bg) {
+  .tr,
+  > div {
+    // tr
+    display: table-row;
+    // border-bottom: 1px dotted $border;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background: $bg;
+    }
+
+    > .th,
+    > .td,
+    > div {
+      // 預設對齊位置為垂直置中、水平置左
+      display: table-cell;
+      min-width: 1em;
+      vertical-align: middle;
+      padding: 0.5em 0;
+      border-bottom: 1px dotted $border;
+      @include horizontal();
+
+      // &:nth-last-child(1){
+      //   padding-right: 1em;
+      // }
+
+      // 垂直
+
+      &.top {
+        vertical-align: top;
+        @include horizontal();
+      }
+
+      &.bottom {
+        vertical-align: bottom;
+        @include horizontal();
+      }
+    }
+
+    > .th {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      color: $color-gray-9;
+      background: $bg;
+      border-bottom: initial;
+    }
+  }
+}
+
+/* 預設 display:table 樣式 */
+
+.d_table {
+  display: table;
+  width: 100%;
+
+  .thead {
+    display: table-header-group;
+  }
+
+  .tbody {
+    display: table-row-group;
+  }
+
+  .tfoot {
+    display: table-footer-group;
+  }
+  @include th-td($color-gray-3, $color-gray-1);
+}
+
+/* 預設的 table 樣式 */
+
+table {
+  &.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &.table,
+  &.table td,
+  &.table th {
+    border: 1px solid $color-gray-3;
+  }
+
+  &.table td,
+  &.table th {
+    padding: 0.75em 0;
+
+    // &:nth-last-child(1){
+    //   padding-right: 1em;
+    // }
+  }
+
+  &.table th {
+    background: $color-gray-1;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.table {
+  width: 100%;
+}
+
+table.table,
+table.table td,
+table.table th {
+  border: 1px solid $color-gray-2;
+}
+
+table.table td,
+table.table th {
+  padding: 1em;
+}
+
+table.table th {
+  background: $color-gray-1;
+}

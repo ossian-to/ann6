@@ -1,0 +1,26 @@
+label{
+  &.custom-select{
+    position: relative;
+    display: inline-block;
+    // border:1px solid red;
+    width: 100%;
+    select{
+      margin: 0;
+      padding: 0.25em 0.5em;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      color: $color-gray-9;
+      line-height: 1.15;
+      background-color: $color-gray-1;
+      border: 1px solid $color-gray-1;
+      border-radius: 0.35em;
+      transition: background-color 0.5s ease-out, border-color 0.5s ease-out, color 0.5s ease-out;
+      &:focus {
+        color: black;
+        background-color: white;
+        border: 1px solid $border-default-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@mixin btn-status($font-color, $border-color, $bg-color, $hover-color){
+  color: $font-color;
+  border-color: $border-color;
+  background-color: $bg-color;
+  transition: color 0.3s ease-out, border 0.3s ease-out, background-color 0.3s ease-out;
+  &:hover{
+    color: $font-color;
+    border-color: $border-color;
+    background-color: $hover-color;
+  }
+}
+
+a,
+button,
+[type="submit"],
+[type="reset"],
+[type="image"] {
+  &.btn{
+
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    line-height: 1.15;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    appearance: none;
+    outline: none;
+    border: 1px solid $border-default-color;
+    border-radius: $border-default-radius;
+    cursor: pointer;
+
+    &.gray-solid{
+      @include btn-status(inherit ,$color-gray-1, $color-gray-1, $color-gray-3);
+    }
+    &.gray-line{
+      @include btn-status(inherit ,$color-gray-3, transparent, $color-gray-1);
+    }
+    &.blue-solid{
+      @include btn-status(white ,$color-blue-2, $color-blue-2, $color-blue-3);
+    }
+    &.blue-line{
+      @include btn-status($color-blue-2 ,$color-blue-2, white, $color-blue-1);
+    }
+    &.red-solid{
+      @include btn-status(white ,$color-red-2, $color-red-2, $color-red-3);
+    }
+    &.red-line{
+      @include btn-status($color-red-2 ,$color-red-2, white, $color-red-1);
+    }
+    &.orange-solid{
+      @include btn-status(white ,$color-orange-2, $color-orange-2, $color-orange-3);
+    }
+    &.orange-line{
+      @include btn-status($color-orange-2 ,$color-orange-2, white, $color-orange-1);
+    }
+    &.yellow-solid{
+      @include btn-status(white ,$color-yellow-2, $color-yellow-2, $color-yellow-3);
+    }
+    &.yellow-line{
+      @include btn-status($color-yellow-2 ,$color-yellow-2, white, $color-yellow-1);
+    }
+    &.green-solid{
+      @include btn-status(white ,$color-green-2, $color-green-2, $color-green-3);
+    }
+    &.green-line{
+      @include btn-status($color-green-3 ,$color-green-2, white, $color-green-1);
+    }
+    &.purple-solid{
+      @include btn-status(white ,$color-purple-2, $color-purple-2, $color-purple-3);
+    }
+    &.purple-line{
+      @include btn-status($color-purple-2 ,$color-purple-2, white, $color-purple-1);
+    }
+    &.pink-solid{
+      @include btn-status(white ,$color-pink-2, $color-pink-2, $color-pink-3);
+    }
+    &.pink-line{
+      @include btn-status($color-pink-2 ,$color-pink-2, white, $color-pink-1);
+    }
+
+
+  }
+
+}
+
+
+

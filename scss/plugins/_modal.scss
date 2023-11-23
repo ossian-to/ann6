@@ -1,0 +1,49 @@
+/* modal的基本樣式 */
+.modal {
+  visibility: hidden;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  /* 顯示modal的樣式 */
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0s;
+  }
+}
+
+/* modal內容的樣式 */
+.modal-content {
+  padding: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  max-width: 400px;
+  width: 90%;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+/* 顯示modal內容的樣式 */
+.modal.show .modal-content {
+  transform: translate(-50%, -50%);
+}
+
+/* 關閉按鈕的樣式 */
+.close-modal {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}

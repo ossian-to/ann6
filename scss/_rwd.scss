@@ -1,0 +1,255 @@
+
+@media only screen and (min-width: 0){
+  html,body{
+    font-size: 14px;
+  }
+  ul.logo-group{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0em;
+    transform: scale(0.9);
+    li{
+      &:nth-child(1){
+        width: 100%;
+        text-align: center;
+      }
+      &:nth-child(2){
+        transform: translateY(-1em);
+      }
+    }
+  }
+  ul.event-logo-group{
+    li{
+      // ROG電競掌機
+      &.title-4{
+        top: 770px;
+        left: calc(50% - 205px);
+      }
+      // Galaxy Tab A9平板
+      &.title-5{
+        top: 670px;
+        left: calc(50%);
+      }
+      // 2023/12/27  (三) 16:00 起 - 2024/02/14  (三) 23:59 止
+      &.title-7{
+        transform: scale(0.9);
+        top: 600px;
+        left: calc(50% - 160px);
+      }
+      // 通用卡限定
+      &.title-8{
+        transform: scale(0.9);
+        top: 710px;
+        left: calc(50% - 130px);
+      }
+      // 雷爵會員獨家好禮抽抽送！多項高級3C送給你～
+      &.title-9{
+        transform: scale(0.9);
+        top: 430px;
+        left: calc(50% - 180px);
+      }
+      // 雷爵樂園：年終感恩回饋祭
+      &.title-10{
+        transform: scale(0.9);
+        top: 140px;
+        left: calc(50% - 200px);
+      }
+    }
+  }
+  .description{
+    .break{
+      display: inline;
+    }
+  }
+  ul.buy{
+    padding-bottom: 12em;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  ul.obj-group{
+    li{
+      &:nth-child(1){
+        display: none;
+      }
+      &:nth-child(2){
+        left: calc(50% - 229px);
+      }
+      &:nth-child(3){
+        display: none;
+      }
+    }
+  }
+  ul.game-group{
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    >li{
+      padding-bottom: 10em;
+    }
+  }
+  ul.gifts-group{
+    flex-wrap: wrap;
+  }
+  .get-gift-note{
+    span{
+      display: initial;
+    }
+  }
+  ul.photos-group{
+    flex-wrap: wrap;
+    li{
+      max-width: unset;
+    }
+  }
+  footer{
+    span{
+      display: block;
+    }
+  }
+}
+@media only screen and (min-width: 370px){
+  ul.event-logo-group{
+    li{
+      &.title-7,
+      &.title-8,
+      &.title-9,
+      &.title-10{
+        transform: unset;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 500px){
+  ul.gifts-group{
+    flex-wrap: nowrap;
+    gap: 1em;
+  }
+  ul.photos-group{
+    flex-wrap: wrap;
+    li{
+      max-width: 45%;
+    }
+  }
+}
+
+@media only screen and (min-width: 650px){
+  html,body{
+    font-size: 16px;
+  }
+  .description{
+    .break{
+      display: block;
+    }
+  }
+  ul.logo-group{
+    display: grid;
+    grid-template-columns: 160px 312px;
+    gap: 1em;
+    align-items: unset;
+    justify-content: unset;
+    transform: unset;
+    li{
+      &:nth-child(2){
+        transform: unset;
+      }
+    }
+  }
+  ul.buy{
+    padding-bottom: 3em;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    > li{
+      max-width: 400px;
+    }
+  }
+  ul.obj-group{
+    li{
+      &:nth-child(1){
+        display: unset;
+        left: 0;
+      }
+      &:nth-child(3){
+        display: unset;
+        right: 0;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 750px){
+  ul.event-logo-group{
+    li{
+      // ROG電競掌機
+      &.title-4{
+        top: 610px;
+        left: calc(50% - 465px);
+      }
+      // Galaxy Tab A9平板
+      &.title-5{
+        top: 630px;
+        left: calc(50% + 20px);
+      }
+      // 2023/12/27  (三) 16:00 起 - 2024/02/14  (三) 23:59 止
+      &.title-7{
+        top: 570px;
+        left: calc(50% - 205px);
+      }
+      // 通用卡限定
+      &.title-8{
+        top: 690px;
+        left: calc(50% - 290px);
+      }
+      // 雷爵會員獨家好禮抽抽送！多項高級3C送給你～
+      &.title-9{
+        top: 360px;
+        left: calc(50% + 180px);
+      }
+      // 雷爵樂園：年終感恩回饋祭
+      &.title-10{
+        top: 140px;
+        left: calc(50% - 360px);
+      }
+    }
+  }
+  footer{
+    span{
+      display: unset;
+    }
+  }
+}
+
+@media only screen and (min-width: 850px){
+  ul.game-group{
+    flex-wrap: nowrap;
+    align-items: stretch;
+    // gap: 2em;
+    >li{
+      padding-bottom: 8em;
+    }
+  }
+  // ul.photos-group{
+  //   li{
+  //     max-width: 50%;
+  //   }
+  // }
+}
+
+@media only screen and (min-width: 920px){
+  .get-gift-note{
+    span{
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 980px){
+  ul.photos-group{
+    flex-wrap: initial;
+    li{
+      max-width: 300px;
+    }
+  }
+}
